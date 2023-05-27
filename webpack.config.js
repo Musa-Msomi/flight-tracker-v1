@@ -11,19 +11,19 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         clean: true,
-        assetModuleFilename: '[name][ext]' // allows file to be loaded same as its in the assets folder
+        assetModuleFilename: '[name][ext]'
     },
-    devtool: 'source-map', // for debugging
+    devtool: 'source-map',
     devServer: {
         static: {
             directory: path.resolve(__dirname, 'dist')
         },
-        port: 3000, // overiding default use of port 8080 to desired port
-        open: true, // opens browser automatically
-        hot: true, //hot reload
-        compress: true, // enable gz compressinon
+        port: 3000,
+        open: true,
+        hot: true,
+        compress: true,
         historyApiFallback: true
     },
     module: {
