@@ -1,3 +1,6 @@
+$nav_footer-bg-color: black;
+$nav-footer_shadow: 1px 0 5px grey;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +14,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 3fr 0.3fr;
+  grid-template-rows: 0.3fr 3fr 0.3fr;
   grid-template-areas:
     "nav"
     "main"
@@ -22,16 +25,21 @@ body {
   font-size: 12px;
   color: white;
   text-align: center;
-  height: 100vh;
-  background: url("../assets/bgImg_mobile.jpg") no-repeat center center/cover;
+  height: 100dvh;
+  background: url("../assets/map3.jpg") no-repeat center center/cover;
 }
 
 nav {
-  background-color: whitesmoke;
+  background-color: $nav_footer-bg-color;
+  box-shadow: $nav-footer_shadow;
 }
 
 footer {
-  //   background-color: black;
+  background-color: $nav_footer-bg-color;
+  box-shadow: $nav-footer_shadow;
+  .copyright-text {
+    padding-top: 20px;
+  }
 }
 
 nav {
@@ -50,28 +58,158 @@ nav #logo {
 }
 main {
   display: grid;
-  // grid-auto-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "."
-    "flight-btn"
-    ".";
+  grid-template-rows: 1fr;
+  grid-template-areas: "table";
 }
-#find-flights-btn {
-  grid-area: flight-btn;
-  justify-self: center;
-  margin-top: 55px;
-  width: 150px;
-  height: 60px;
-  background: transparent;
-  border: solid 2px white;
-  box-shadow: 0 0 3px black;
-  transition: 0.3s;
-  color: white;
-  border-radius: 10px;
-  font-size: large;
-}
-#find-flights-btn:hover {
+
+#modal {
+  width: 300px;
+  height: 300px;
   background-color: white;
+  overflow: auto;
+  margin-top: 30px;
+  grid-area: table;
+  justify-self: center;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 1px 0 10px gray;
+}
+
+.modal-content {
   color: black;
+}
+
+#pikachu-loading-gif {
+  display: block;
+}
+
+#pikachu-loading-gif img {
+  width: 50px;
+  height: 50px;
+}
+
+#pikachu-loading-gif.hidePikachu {
+  display: none;
+}
+
+table {
+  border-spacing: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+
+  th,
+  td {
+    padding: 5px;
+    cursor: pointer;
+    width: 600px;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(77, 235, 200);
+  }
+  tbody {
+    display: block;
+    overflow: auto;
+    max-height: 100%;
+    width: 100%;
+  }
+}
+
+#map-container {
+  display: none;
+  grid-area: table;
+  position: relative;
+  z-index: 1;
+  width: 330px;
+  height: 330px;
+  background-color: white;
+  overflow: auto;
+  margin-top: 30px;
+  justify-self: center;
+  border-radius: 8px;
+  box-shadow: 1px 0 5px black;
+}
+#leaflet-map {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.not-found-popup {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  right: 5px;
+  top: 5px;
+  z-index: 2;
+  background-color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// Desktop media query
+@media only screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.3fr 3fr 0.3fr;
+    grid-template-areas:
+      "nav nav"
+      "main main"
+      "footer footer";
+    gap: 20px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "modal map";
+  }
+
+  #modal {
+    grid-area: modal;
+    width: 500px;
+    height: 500px;
+    box-shadow: 1px 0 5px black;
+  }
+
+  #map-container {
+    grid-area: map;
+    display: block;
+    width: 500px;
+    height: 500px;
+  }
+  #leaflet-map {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .close {
+    display: none;
+  }
 }

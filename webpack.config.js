@@ -6,8 +6,6 @@ module.exports = {
     mode: 'development',
     entry: {
         home: path.resolve(__dirname, 'src/index.js'),
-        flights: path.resolve(__dirname, 'src/flights.js')
-
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -48,12 +46,6 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html',
             chunks: ['home'],
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Flights Page',
-            filename: 'flights.html',
-            template: 'src/flights.html',
-            chunks: ['flights']
         })
     ]
 }

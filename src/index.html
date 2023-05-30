@@ -4,17 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <title>FlightTracker|Home</title>
   </head>
   <body>
     <div class="container">
       <nav>
-        <img id="logo" alt="flight_tracker_logo" />
+        <a href="#"><img id="logo" alt="flight_tracker_logo" /></a>
       </nav>
       <main>
-        <button id="find-flights-btn">Find Flight</button>
+        <div id="map-container">
+          <span class="close">&times;</span>
+          <div id="leaflet-map"></div>
+        </div>
+        <div id="modal">
+          <div class="modal-content">
+            <div id="pikachu-loading-gif">
+              <img id="pikachu-gif" alt="Gif image of Pikachu runnning" />
+            </div>
+            <div id="flights-table">
+              <table id="flights">
+                <thead>
+                  <tr>
+                    <th>Flights</th>
+                  </tr>
+                </thead>
+                <tbody id="flights-tbody">
+                  <!-- <tr>
+                    <td>e48809</td>
+                  </tr>
+                  <tr>
+                    <td>c0635c</td>
+                  </tr>
+                  <tr>
+                    <td>e4904f</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </main>
-      <footer>Footer</footer>
+      <footer>
+        <div class="copyright-text">
+          <span>&copy; leafletjs.com | &copy; opensky.com</span>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
