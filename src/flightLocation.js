@@ -1,9 +1,8 @@
 import axios from 'axios'
 export function myMap() {
 
-
     const tdElements = document.querySelectorAll('#flights-tbody td');
-    const map = document.getElementById('map-container');
+    const mapContainer = document.getElementById('map-container');
     let latitude = null;
     let longitude = null;
 
@@ -25,7 +24,7 @@ export function myMap() {
                     console.log(latitude);
                     console.log(longitude);
 
-                    map.style.display = 'block';
+                    mapContainer.style.display = 'block';
 
                     displayMap(latitude, longitude);
                 })
@@ -68,8 +67,9 @@ function displayMap(latitude, longitude) {
 
     let marker = L.marker([latitude, longitude]).addTo(map);
 
-    let span = document.getElementsByClassName("close")[0];
-    span.addEventListener('click', () => {
+    let closeBtn = document.getElementsByClassName("close")[0];
+
+    closeBtn.addEventListener('click', () => {
         mapContainer.style.display = 'none'
     })
 }
