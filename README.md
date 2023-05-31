@@ -52,3 +52,10 @@ npm run dev
 
 The application will be running at http://localhost:3000. Open your web browser and navigate to this URL to access the FlightTracker app.
 To view a flight's current location, click on the flight number (eg. A7GB67)
+![mobile-loading](https://github.com/Musa-Msomi/flight-tracker-v1/assets/99795075/7bfa6834-96d7-4c88-a411-4c4003fcc064)
+![list of flights](https://github.com/Musa-Msomi/flight-tracker-v1/assets/99795075/13d2cff1-510b-4973-8d4b-6f52db271326)
+![map-mobile](https://github.com/Musa-Msomi/flight-tracker-v1/assets/99795075/ccf853bd-23a7-49b9-939b-9dff6d3fbf58)
+![desktop-loading](https://github.com/Musa-Msomi/flight-tracker-v1/assets/99795075/6c8fe071-f4c3-4339-abec-662d9059fd5c)
+![desktop-list-flights](https://github.com/Musa-Msomi/flight-tracker-v1/assets/99795075/e785f8af-584c-4155-b1d3-a85321e7109e)
+![desktop-map](https://github.com/Musa-Msomi/flight-tracker-v1/assets/99795075/66bf8d3e-e3d4-4d1f-910a-16ae8af99666)
+
