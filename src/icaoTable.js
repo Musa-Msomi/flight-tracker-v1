@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 export async function populateTable() {
-    const begin = 1517227200;
-    const end = 1517230800;
-    const getFlightsUrl = `https://opensky-network.org/api/flights/all?begin=${begin}&end=${end}`;
+
+    const getFlightsUrl = `https://opensky-network.org/api/states/all`;
     const loadingGif = document.getElementById('pikachu-loading-gif');
     const tbody = document.getElementById('flights-tbody');
     const th = document.querySelector('#flights th');
@@ -13,8 +12,8 @@ export async function populateTable() {
 
     try {
         const response = await axios.get(getFlightsUrl);
-        const flights = response.data;
-        const flightNumbers = flights.map((flight) => flight.icao24);
+        const flights = response.data.states;
+        const flightNumbers = flights.map((flight) => flight[0]);
 
         flightNumbers.forEach((icao24) => {
             const row = document.createElement('tr');
