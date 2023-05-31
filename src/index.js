@@ -9,9 +9,17 @@ logo.src = flightLogo;
 const pikachuLoadingGif = document.getElementById('pikachu-gif');
 pikachuLoadingGif.src = pikachu;
 
-populateTable();
+async function runFlightTracker() {
+    try {
 
-// TODO: FInd a sweet spot for the timeout delay
-setTimeout(() => {
-    myMap();
-}, 5000); 
+        await populateTable();
+        myMap();
+
+    } catch (error) {
+
+        console.error(error);
+    }
+}
+
+runFlightTracker();
+
