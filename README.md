@@ -1,6 +1,6 @@
 # flight-tracker-v1
 
-This is a FlightTracker application that allows users to search for flights.
+This is a FlightTracker application that allows users to view a flight's current location.
 
 ## Getting Started
 
@@ -51,3 +51,4 @@ npm run dev
 ```
 
 The application will be running at http://localhost:3000. Open your web browser and navigate to this URL to access the FlightTracker app.
+To view a flight's current location, click on the flight number (eg. A7GB67)
