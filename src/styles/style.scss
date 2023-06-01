@@ -67,7 +67,7 @@ main {
   height: 300px;
   background-color: rgb(0, 0, 0);
   overflow: auto;
-  margin-top: 30px;
+  margin-top: 100px;
   grid-area: table;
   justify-self: center;
   margin-bottom: 30px;
@@ -127,7 +127,7 @@ table {
   height: 330px;
   background-color: white;
   overflow: auto;
-  margin-top: 30px;
+  margin-top: 100px;
   justify-self: center;
   border-radius: 8px;
   box-shadow: 1px 0 5px black;
@@ -182,7 +182,7 @@ table {
       "nav nav"
       "main main"
       "footer footer";
-    gap: 20px;
+    // gap: 20px;
   }
 
   main {
@@ -196,6 +196,7 @@ table {
     width: 500px;
     height: 500px;
     box-shadow: 1px 0 5px black;
+    
   }
 
   #map-container {
@@ -203,6 +204,7 @@ table {
     display: block;
     width: 500px;
     height: 500px;
+    
   }
   #leaflet-map {
     height: 100%;
@@ -213,4 +215,16 @@ table {
   .close {
     display: none;
   }
+}
+@media only screen and (min-width: 400px){
+#modal{
+  width: 400px;
+  height: 400px;
+  
+}
+#map-container{
+  width: 400px;
+  height: 400px;
+
+}
 }
