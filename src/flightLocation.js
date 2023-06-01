@@ -65,7 +65,7 @@ function displayMap(latitude, longitude) {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    let marker = L.marker([latitude, longitude]).addTo(map);
+    L.marker([latitude, longitude]).addTo(map);
 
     let closeBtn = document.getElementsByClassName("close")[0];
 
