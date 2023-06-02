@@ -1,7 +1,7 @@
 import { getFlightData } from './api/api.js';
 import { showMapContainer, hideMapContainer, displayMap, showPopupMessage } from './dom-manipulation/dom-manipulation.js';
 
-export function myMap() {
+export function leafletMap() {
     const tdElements = document.querySelectorAll('#flights-tbody td');
     let latitude = null;
     let longitude = null;

@@ -1,10 +1,10 @@
 import { loadAndPopulateTable } from './icaoTable.js';
-import { myMap } from './flightLocation.js';
+import { leafletMap } from './flightLocation.js';
 
 export async function runFlightTracker() {
   try {
     await loadAndPopulateTable();
-    myMap();
+    leafletMap();
   } catch (error) {
     console.error(error);
   }
