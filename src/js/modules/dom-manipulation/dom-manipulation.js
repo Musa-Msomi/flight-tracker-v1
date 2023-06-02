@@ -46,7 +46,7 @@ export function displayMap(latitude, longitude) {
     if (map) {
         map.remove();
     }
-    map = L.map(actualMap).setView([latitude, longitude], 13);
+    map = L.map(actualMap).setView([latitude, longitude], 5);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
