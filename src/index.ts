@@ -1,7 +1,7 @@
 import './styles/style.scss';
 import flightLogo from './assets/ft_logo.png';
 import pikachu from './assets/pikachu.gif';
-import { runFlightTracker } from './js/modules/flightTracker';
+import { runFlightTracker } from './ts/modules/flightTracker';
 
 const logo = document.getElementById('logo') as HTMLImageElement;
 logo.src = flightLogo;
