@@ -1,51 +1,54 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
+    mode: "development",
     entry: {
-        home: path.resolve(__dirname, 'src/index.js'),
+        home: path.resolve(__dirname, "src/index.ts"),
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, "dist"),
+        filename: "[name].bundle.js",
         clean: true,
-        assetModuleFilename: '[name][ext]'
+        assetModuleFilename: "[name][ext]",
     },
-    devtool: 'source-map',
+    devtool: "source-map",
     devServer: {
         static: {
-            directory: path.resolve(__dirname, 'dist')
+            directory: path.resolve(__dirname, "dist"),
         },
         port: 3000,
         open: true,
         hot: true,
         compress: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"],
     },
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ],
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource'
+                type: "asset/resource",
+            },
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
             },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Home Page',
-            filename: 'index.html',
-            template: 'src/index.html',
-            chunks: ['home'],
-        })
-    ]
-}
+            title: "Home Page",
+            filename: "index.html",
+            template: "src/index.html",
+            chunks: ["home"],
+        }),
+    ],
+};
