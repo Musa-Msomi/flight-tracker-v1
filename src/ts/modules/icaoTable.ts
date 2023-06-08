@@ -7,9 +7,19 @@ export async function loadAndPopulateTable(): Promise<void> {
   try {
     showLoadingGif();
 
-    const ongoingFlights = await getFlights();
-    flightNumbers = ongoingFlights.map((flight) => flight[0]);
+    const flightDataLocal = localStorage.getItem('flight-numbers');
+    console.log(localStorage);
+    console.log(typeof flightDataLocal)
 
+    if (flightDataLocal) {
+      flightNumbers = JSON.parse(flightDataLocal);
+    } else {
+      const ongoingFlights = await getFlights();
+      flightNumbers = ongoingFlights.map((flight) => flight[0]);
+      localStorage.setItem('flight-numbers', JSON.stringify(flightNumbers));
+    }
+
+    console.log(flightNumbers);
     populateTable(flightNumbers);
 
     hideLoadingGif();
