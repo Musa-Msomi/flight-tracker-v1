@@ -9,15 +9,17 @@ export async function runFlightTracker(): Promise<void> {
     leafletMap();
 
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
-    fromEvent(searchInput, 'input')
+    const search$ = fromEvent(searchInput, 'input')
       .pipe(
         map((event: Event) => (event.target as HTMLInputElement)?.value),
         debounceTime(1000),
         distinctUntilChanged()
-      )
-      .subscribe((searchValue: string) => {
-        filterFlightsTable(searchValue);
-      });
+      );
+
+
+    search$.subscribe((searchValue: string) => {
+      filterFlightsTable(searchValue);
+    });
 
   } catch (error) {
     console.error(error);

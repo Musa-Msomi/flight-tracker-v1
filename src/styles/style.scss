@@ -32,11 +32,17 @@ body {
 nav {
   background-color: $nav_footer-bg-color;
   box-shadow: $nav-footer_shadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
   background-color: $nav_footer-bg-color;
   box-shadow: $nav-footer_shadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .copyright-text {
     padding-top: 20px;
   }
