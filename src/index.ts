@@ -1,11 +1,13 @@
-import './styles/style.scss';
-import flightLogo from './assets/ft_logo.png';
-import pikachu from './assets/pikachu.gif';
-import { runFlightTracker } from './ts/modules/flightTracker';
+import "./styles/style.scss";
+import flightLogo from "./assets/ft_logo.png";
+import pikachu from "./assets/pikachu.gif";
+import { runFlightTracker } from "./ts/modules/flightTracker";
 
-const logo = document.getElementById('logo') as HTMLImageElement;
+const logo = document.getElementById("logo") as HTMLImageElement;
 logo.src = flightLogo;
-const pikachuLoadingGif = document.getElementById('pikachu-gif') as HTMLImageElement;
+const pikachuLoadingGif = document.getElementById(
+  "pikachu-gif"
+) as HTMLImageElement;
 pikachuLoadingGif.src = pikachu;
 
 runFlightTracker();

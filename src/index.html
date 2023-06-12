@@ -24,7 +24,7 @@
         </div>
         <div id="modal">
           <div class="modal-content">
-            <div id="pikachu-loading-gif">
+            <div id="pikachu-loading-gif" class="ml-150">
               <img id="pikachu-gif" alt="Gif image of Pikachu runnning" />
             </div>
             <div id="flights-table">
@@ -32,6 +32,7 @@
                 type="text"
                 id="search-input"
                 placeholder="Enter Flight Number"
+                class="cursor-text p-2 bg-white rounded focus:outline-none focus:ring focus:border-blue-300"
               />
               <table id="flights">
                 <thead>
@@ -39,17 +40,7 @@
                     <th>Ongoing Flights</th>
                   </tr>
                 </thead>
-                <tbody id="flights-tbody">
-                  <!-- <tr>
-                    <td>e48809</td>
-                  </tr>
-                  <tr>
-                    <td>c0635c</td>
-                  </tr>
-                  <tr>
-                    <td>e4904f</td>
-                  </tr> -->
-                </tbody>
+                <tbody id="flights-tbody"></tbody>
               </table>
             </div>
           </div>
