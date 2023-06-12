@@ -8,7 +8,7 @@ export async function loadAndPopulateTable(): Promise<void> {
     showLoadingGif();
 
     const ongoingFlights = await getFlights();
-    flightNumbers = ongoingFlights.map((flight) => flight[0]);
+    flightNumbers = ongoingFlights.map((flight) => flight[0]).slice(0,30);
 
     populateTable(flightNumbers);
 
