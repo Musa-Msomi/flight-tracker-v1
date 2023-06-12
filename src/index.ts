@@ -1,5 +1,5 @@
 import "./styles/style.scss";
-import flightLogo from "./assets/ft_logo.png";
+import flightLogo from "./assets/ft_logo.webp";
 import pikachu from "./assets/pikachu.gif";
 import { runFlightTracker } from "./ts/modules/flightTracker";
 
