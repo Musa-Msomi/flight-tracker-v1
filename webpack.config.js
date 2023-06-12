@@ -1,8 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 
 module.exports = {
     mode: "development",
+    optimization: {
+        usedExports: true, // Enable used exports analysis
+        minimizer: [new TerserPlugin()], // Use TerserPlugin for minification
+      },
     entry: {
         home: path.resolve(__dirname, "src/index.ts"),
     },
@@ -33,7 +39,7 @@ module.exports = {
                 use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
                 type: "asset/resource",
             },
             {
@@ -50,5 +56,6 @@ module.exports = {
             template: "src/index.html",
             chunks: ["home"],
         }),
+        new ImageminWebpWebpackPlugin(),
     ],
 };
