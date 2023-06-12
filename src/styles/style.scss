@@ -43,9 +43,10 @@ nav {
 
 footer {
   background-color: $nav_footer-bg-color;
-  // box-shadow: $nav-footer_shadow;
+  box-shadow: $nav-footer_shadow;
   .copyright-text {
     padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 

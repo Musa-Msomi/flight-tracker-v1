@@ -11,16 +11,3 @@ const pikachuLoadingGif = document.getElementById(
 pikachuLoadingGif.src = pikachu;
 
 runFlightTracker();
-
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Checking for overflowing elements");
-  var docWidth = document.documentElement.offsetWidth;
-  var docHeight = document.documentElement.offsetHeight;
-  var elements = document.querySelectorAll("*");
-  [].forEach.call(elements, function (el: HTMLElement) {
-    if (el.offsetWidth > docWidth || el.offsetHeight > docHeight) {
-      console.log(el);
-      console.log("found the bastards")
-    }
-  });
-});
