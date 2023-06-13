@@ -6,9 +6,9 @@ const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 module.exports = {
     mode: "development",
     optimization: {
-        usedExports: true, // Enable used exports analysis
-        minimizer: [new TerserPlugin()], // Use TerserPlugin for minification
-      },
+        usedExports: true,
+        minimizer: [new TerserPlugin()],
+    },
     entry: {
         home: path.resolve(__dirname, "src/index.ts"),
     },
